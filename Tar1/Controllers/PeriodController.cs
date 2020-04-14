@@ -17,9 +17,10 @@ namespace AkimShifts.Controllers
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public bool Get(int id)
         {
-            return "value";
+            Period p = new Period();
+           return p.GetPer(id);
         }
 
         // POST api/<controller>

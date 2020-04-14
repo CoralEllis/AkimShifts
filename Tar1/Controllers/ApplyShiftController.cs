@@ -8,28 +8,26 @@ using Tar1.Models;
 
 namespace AkimShifts.Controllers
 {
-    public class UserController : ApiController
+    public class ApplyShiftController : ApiController
     {
         // GET api/<controller>
-        public List<User> Get()
+        public IEnumerable<string> Get()
         {
-            User u = new User();
-            return u.GetUsers();
+            return new string[] { "value1", "value2" };
         }
-
         // GET api/<controller>/5
-        public List<User> Get(int id)
+        public List<ApplyShift> Get(int id)
         {
-            User u = new User();
-            return u.GetUnitUsers(id);
+            ApplyShift appS = new ApplyShift();
+            return appS.GetApplyShift(id);
+             
         }
-
         // POST api/<controller>
-        public void Post([FromBody]User user)
+        public void Post([FromBody]List<ApplyShift> AS)
         {
-            user.InsertUser();
+            ApplyShift appS = new ApplyShift();
+            appS.InsertApplyShift(AS);
         }
-
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {

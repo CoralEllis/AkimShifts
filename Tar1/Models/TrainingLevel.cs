@@ -35,7 +35,16 @@ namespace Tar1.Models
         public void UpdateTL(int id)
         {
             DBservices dbs = new DBservices();
-            dbs.UpdateGuide(this, id);
+            if (this.Id == 0)
+            {
+                dbs.updateTLTable(this, id);
+            }
+            else
+            {
+                dbs.UpdateGuide(this, id);
+
+            }
+
         }
 
 

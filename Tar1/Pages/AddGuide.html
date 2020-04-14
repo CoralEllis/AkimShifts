@@ -30,6 +30,7 @@
         function GetTrianingE(error) {
             console.log(error);
         }
+
         function GetOrganizeUnitS(data) {
             UnitArray = data;
                      str = "<option>בחר יחידה ארגונית</option>";
@@ -41,6 +42,7 @@
         function GetOrganizeUnitE(error) {
             console.log(error);
         }
+
         function InsertUser() {
             id = $("#id").val();
             first = $("#first").val();
@@ -82,8 +84,8 @@
         }
         function PostUserS(data) {
             alert("SABABA");
-             id = $("#id").val();
-                 TL = 0;
+            id = $("#id").val();
+            TL = 0;
             trl = $("#SelectTraining").val();
             for (var i = 0; i < TLarray.length; i++) {
                 if (trl == TLarray[i].Traininglevel)
@@ -100,7 +102,8 @@
             console.log(error);
             alert("BASA");
         }
-            function PutTrianingS(data) {
+
+        function PutTrianingS(data) {
             alert("SABABA");
         }
         function PutTrianingE(error) {

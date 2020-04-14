@@ -7,32 +7,33 @@ using System.Web.Http;
 using Tar1.Models;
 
 namespace AkimShifts.Controllers
+
 {
-    public class UserController : ApiController
+    public class ConstraintController : ApiController
     {
         // GET api/<controller>
-        public List<User> Get()
+        public List<Constraint> Get()
         {
-            User u = new User();
-            return u.GetUsers();
+            Constraint c = new Constraint();
+            return c.getConstraint();
         }
 
         // GET api/<controller>/5
-        public List<User> Get(int id)
+        public string Get(int id)
         {
-            User u = new User();
-            return u.GetUnitUsers(id);
+            return "value";
         }
 
         // POST api/<controller>
-        public void Post([FromBody]User user)
+        public void Post([FromBody]string value)
         {
-            user.InsertUser();
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        // PUT api/<controller>/5    
+        public void Put(int id, [FromBody] Constraint c)
         {
+            Constraint constr = new Constraint();
+            constr.upadteConstraint(c);
         }
 
         // DELETE api/<controller>/5

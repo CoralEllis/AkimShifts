@@ -158,7 +158,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ApartmentTypeController.cs" />
+    <Compile Include="Controllers\ApplyShiftController.cs" />
+    <Compile Include="Controllers\ConstraintController.cs" />
     <Compile Include="Controllers\OrganizeUnitController.cs" />
+    <Compile Include="Controllers\ShiftsController.cs" />
     <Compile Include="Controllers\TrainingLevelController.cs" />
     <Compile Include="Controllers\PeriodController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -166,9 +169,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ApartmentType.cs" />
+    <Compile Include="Models\ApplyShift.cs" />
+    <Compile Include="Models\Constraint.cs" />
+    <Compile Include="Models\OfficialShift.cs" />
     <Compile Include="Models\OrganizeUnit.cs" />
     <Compile Include="Models\DAL\DBservices.cs" />
     <Compile Include="Models\Period.cs" />
+    <Compile Include="Models\Shift.cs" />
     <Compile Include="Models\TrainingLevel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,6 +189,9 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\ConstraintManagement.html" />
+    <Content Include="Pages\WorkArrangement.html" />
+    <Content Include="Pages\SubmitShifts.html" />
     <Content Include="Pages\LibatHomePage.html" />
     <Content Include="Pages\BigManagerHomePage.html" />
     <Content Include="Pages\UnitManagerHomePage.html" />
@@ -192,14 +202,26 @@
     <Content Include="Pages\AddManager.html" />
     <Content Include="Pages\AddSpecialLevel.html" />
     <Content Include="Pages\AddGuide.html" />
+    <Content Include="Photos\-classic-living-room.jpg" />
+    <Content Include="Photos\-looking-calendar.jpg" />
     <Content Include="Photos\calendar-mock-up.jpg" />
+    <Content Include="Photos\clipboard.jpg" />
+    <Content Include="Photos\creative-team.jpg" />
+    <Content Include="Photos\diverse-people.jpg" />
     <Content Include="Photos\group-friends.jpg" />
+    <Content Include="Photos\group-people-hugging-each-other-park_.jpg" />
+    <Content Include="Photos\hand-holding-young-plant.jpg" />
     <Content Include="Photos\LOGO.PNG" />
-    <Content Include="Photos\management-schedule-organisation.jpg" />
+    <Content Include="Photos\modern-office-room-with-blank-screen-laptop.jpg" />
+    <Content Include="Photos\overhead-view-house-model-with-house-wooden.jpg" />
     <Content Include="Photos\Post-it-notes.jpg" />
+    <Content Include="Photos\rule.jpg" />
     <Content Include="Photos\science-education.jpg" />
     <Content Include="Photos\small-wooden-clock.jpg" />
+    <Content Include="Photos\stacking-wooden-block.jpg" />
     <Content Include="Photos\teamwork.jpg" />
+    <Content Include="Photos\Training.jpg" />
+    <Content Include="Photos\women-putting-hands-together.jpg" />
     <Content Include="Scripts\ajaxCalls.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -228,6 +250,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment.js" />
     <Content Include="Style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

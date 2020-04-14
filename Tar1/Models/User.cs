@@ -18,6 +18,9 @@ namespace Tar1.Models
         bool unitmanager;
         bool bigmanager;
         int unitid;
+        double monthlyHours;
+        double monthlyExtraHours;
+        int numOfPref;
 
         public string Userid { get => userid; set => userid = value; }
         public string Password { get => password; set => password = value; }
@@ -29,9 +32,12 @@ namespace Tar1.Models
         public bool Unitmanager { get => unitmanager; set => unitmanager = value; }
         public bool Bigmanager { get => bigmanager; set => bigmanager = value; }
         public int Unitid { get => unitid; set => unitid = value; }
+        public double MonthlyHours { get => monthlyHours; set => monthlyHours = value; }
+        public double MonthlyExtraHours { get => monthlyExtraHours; set => monthlyExtraHours = value; }
+        public int NumOfPref { get => numOfPref; set => numOfPref = value; }
 
         public User() { }
-        public User(string id, string pass,string first, string last, DateTime bdate, string tel, string _role, bool um, bool bm, int Uid)
+        public User(string id, string pass,string first, string last, DateTime bdate, string tel, string _role, bool um, bool bm, int Uid,double monthhour,double exmonthhour, int numofP)
         {
             Userid = id;
             Password = pass;
@@ -43,8 +49,9 @@ namespace Tar1.Models
             Unitmanager = um;
             Bigmanager = bm;
             Unitid = Uid;
-
-
+            MonthlyHours = monthhour;
+            MonthlyExtraHours = exmonthhour;
+            NumOfPref = numofP;
         }
         public void InsertUser()
         {
@@ -59,6 +66,11 @@ namespace Tar1.Models
            return dbs.GetUser();
         }
 
+        public List<User> GetUnitUsers(int id)
+        {
+            DBservices dbs = new DBservices();
+            return dbs.GetUnitUser(id);
+        }
 
 
     }
