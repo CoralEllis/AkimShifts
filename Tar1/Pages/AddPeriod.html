@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="../Style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript"></script>
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+        user;
+        function GetUser() {
+            x = localStorage.getItem("User");
+            user = JSON.parse(x);
+        }
+        function NightShiftToggole() {
+            str = " <h4>משמרת לילה </h4><br /><span>שעות:</span><input type='time' /><strong> - </strong> <input type='time' /><br />";
+            str += "<span> מספר מדריכים</span><input type='number' /><br />"
+            if (document.getElementById("NightShift").checked == true)
+                $("#DivNight").html(str);
+
+            else if (document.getElementById("NightShift").checked == false)
+                $("#DivNight").html("");
+        }
+
+        function NightExpectionToggole() {
+
+            str = "";
+            if (document.getElementById("ExceptionShift").checked == true) {
+                str = "<label> הכנס מספר משמרות חריגות בתחום התאריכים שהוכנס:</label><input type='number' id='NumOfException'onchange='AddDivs()'onkeyup='AddDivs()'/>";
+                $("#IrregularShifts").html(str);
+
+            }
+            else if (document.getElementById("ExceptionShift").checked == false) {
+                $("#IrregularShifts").html(str);
+                $("#DivsForShifts").html(str);
+            }
+        }
+        function AddDivs() {
+            $("#DivsForShifts").html("");
+            num = $("#NumOfException").val();
+            str = " <select><option>בחר סוג משמרת</option><option>משמרת בוקר</option> <option>משמרת ערב</option><option>משמרת לילה</option></select><br />";
+            str += "<label> הכנס תאריך:</label> <input type='date' /><br /><span>שעות:</span> <input type='time' /><strong> - </strong> <input type='time' /><br />";
+            str += "<span> מספר מדריכים</span><input type='number' /><br /><br />";
+
+            for (var i = 0; i < num; i++) {
+                document.getElementById("DivsForShifts").innerHTML += str;
+            }
+
+        }
+        function PostPeriod() {
+            startdate = $("#start").val();
+            enddate = $("#end").val();
+            Period = {
+                "Startdate": startdate,
+                "Enddate": enddate,
+                "Unitid":user.Unitid
+            }
+                ajaxCall("POST", "../api/Period", JSON.stringify(Period), PostPeriodS, PostPeriodE);
+        }
+        function PostPeriodS(data) {
+            alert("SABABA!");
+
+
+        }
+        function PostPeriodE(error) {
+            alert("BASSA");
+            console.log(error);
+        }
+
+
+    </script>
+    <title></title>
+</head>
+<body dir="rtl" style="background-color:aliceblue" onload="GetUser()">
+    <img src="../Photos/LOGO.PNG" />
+    <div class="container">
+        <h1>  הוספת תקופת שיבוץ חדשה</h1><br />
+        <form dir="rtl">
+            <div class="row">
+                <label><strong> בחר תאריכים: </strong></label>
+
+                <div class="col">
+                    <label> תאריך התחלה:</label><input type="date" id="start" />
+                </div>
+                <div class="col">
+                    <label> תאריך סיום:</label><input type="date" id="end" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-5">
+                    <h4>משמרת בוקר </h4><br />
+                    <span>שעות:</span> <input type="time" /><strong> - </strong> <input type="time" /><br />
+                    <span> מספר מדריכים:</span><input type="number" /><br />
+                </div>
+                <div class="col-5">
+                    <h4>משמרת ערב </h4><br />
+                    <span>שעות:</span> <input type="time" /><strong> - </strong> <input type="time" /><br />
+                    <span> מספר מדריכים:</span><input type="number"  /><br />
+                </div>
+            </div>
+            <br />
+
+            <div class="row" dir="rtl">
+                <input type="checkbox" id="NightShift" onclick="NightShiftToggole()" /> <span> יש משמרת לילה?</span><br />
+            </div>
+            <div class="row" dir="rtl">
+                <div class="col-7" dir="rtl" id="DivNight">
+
+                </div>
+            </div>
+            <div class="row" dir="rtl">
+                <input type="checkbox" id="ExceptionShift" onclick="NightExpectionToggole()" /> <span> יש משמרות חריגה?</span><br />
+            </div>
+            <div class="row" dir="rtl" id="IrregularShifts">
+
+            </div>
+        </form>
+        <div class="row" dir="rtl">
+            <form dir="rtl" id="DivsForShifts">
+            </form>
+        </div>
+        <div class="row" dir="rtl">
+            <br /><input type="submit" value="שמור" onclick="PostPeriod()"/><br />
+        </div>
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿form {
+    margin-right: 50px;
+    color: darkblue;
+    text-align:right;
+}
+
+input[type=number]{
+    width:60px;
+}
+
+button, input[type=submit] {
+    background-color: #008CBA;
+    color: white;
+    font-family: Calibri;
+}
+
+.teamwork {
+    width: 1200px;
+    height: 200px;
+}
+#UnitManager {
+    color: cadetblue;
+    font-family: Calibri;
+    text-align: center;
+    font-size:50px;
+}
+.unitmanagerpics {
+    height: 250px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+img {
+    height: 100px;
+    width: 150px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #66CCFF;
+}
+
+input, select {
+    border: none;
+    border-bottom: 1px solid #66CCFF;
+    color: darkblue;
+    font-family: Calibri;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+    input[type=checkbox] {
+        background-color: aliceblue;
+        border: solid darkblue;
+    }
+
+/*#ph {
+    background-color: lightblue;
+    border: 1px solid darkblue;
+    color: darkblue;
+    margin: auto;
+    padding-left: 10px;
+}
+
+        color: #008CBA;
+#order{
+    background-color:aliceblue;
+}
+#memory {
+    margin: auto;
+    padding-left: 10px;
+}
+
+button, #search {
+    background-color: #008CBA;
+    color: white;
+    font-family: Calibri;
+}
+
+#pic, .pic {
+    display: block;
+    margin: auto;
+    margin-right: 200px;
+    height: 200px;
+    width: 400px;
+    text-align: center;
+}
+.pic{
+    width:300px;
+   
+
+}
+
+#form1, h1,#login ,#form2{
+    margin: auto;
+    padding-top: 50px;
+    padding-left: 30px;
+    color: #66CCFF;
+    font-family: Calibri;
+}
+
+
+
+
+hr {
+    border: 0.5px dotted darkblue;
+}
+
+#Manager {
+    margin-left: 900px;
+    margin-top: 20px;
+    text-decoration: solid;
+}
+#login {
+    margin: 50px;
+
+}*/
+
+
